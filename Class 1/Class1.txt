@@ -1,0 +1,122 @@
+package com;
+
+public class A {
+
+	// data members of a class should not be accessed directly outside the class
+	// data members can be accessible by using member functions of the class
+	
+	// These are non-static class scope variables (or) fields
+	private int x = 10;
+	private int y = 20;
+	
+	
+	// below are non-static methods of the class 
+	
+	public int getX() {
+		return x;
+	}
+	
+	public int getY() {
+		return y;
+	}
+	
+	public void set(int a,int b) {
+		int z = 11;
+		x = a;
+		y = b;
+	}
+	
+	public void display() {
+		System.out.println("Value of A class x = "+x);
+		System.out.println("Value of A class y = "+y);
+	}
+}
+
+
+/*
+
+Java is called as Object Oriented programming as it follows the following rules
+----------------------------------------------------------------------
+
+1) Encapsultion
+
+2) Polymorphism
+
+3) Inheritance
+
+4) Abstraction
+
+5) 
+
+6) 
+
+## Any variable of method of a class if declared or defined with "static" keyword 
+then JVM will allocate memory for all static members of the class before the execution
+of the class
+
+## For all non-static members JVM will not take responsibility to create a memory before 
+execution of the program. And it is allowed to provide memory for non-static members 
+by the programmer itself.
+ 
+
+primitive types in java
+----------------------
+
+void  (Void)       --- null
+boolean (Boolean)     --- 1bit  true/false  0/1
+byte (Byte)        --- 8bits/1byte [character / numeric]
+char  (Character)       --- 2bytes of character data
+short (Short)       --- 2bytes of numeric data (+/-)
+int  (Integer)         --- 4bytes of numeric data (+/-)
+long  (Long)       --- 8bytes of numeric data (+/-)
+float (Float)       --- 4bytes of numeric and decimal pointed values (+/-)
+double  (Double)       --- 8bytes of numeric and decimal pointed values (+/-)
+
+all primitive types are defined in few particular classes called as Wrapper classes
+these predefined wrapper classes are available in a default package called as 
+java.lang
+
+When ever we create a normal java class then a default constructor will be automatically
+available in the class.
+Constructors will take the name of the class and will not return any value as of a method
+return. If we specify a return type for any constructor then it will be no more treated
+as a constructor but will be treated as a method of the class.
+Default constructors will not be visible in the class scope but will be available in the 
+scope of the class
+
+
+
+*/
+
+package com;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Program Begin");
+		//Object creation statement for A class non-static members
+		A oa1 = new A();
+		
+		oa1.display(); //x = 10 and y = 20
+		oa1.set(88, 99);
+		oa1.display(); // x = 88 and y = 99
+		
+		
+	}
+}
+/*
+## "new" --> here new operator is used to request JVM for the creation of new 
+dynamic memory area(object) for storing non-static members of any class temporarily.
+
+## beside to new operator we provide constructor name of any class to inform JVM that to 
+which class new operator is requesting to create an object.
+
+## "A oa1;" --> this is a reference variable creation . Here "oa1" is a reference variable
+created for A class. Reference variables are used to store dynamic memory 
+address of that particular class
+
+
+
+
+*/
