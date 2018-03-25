@@ -1,0 +1,20 @@
+
+In every software there will be two types of files 
+1) Binary files :: These are the files used to run the software or run our developed apllication
+
+2) Library files :: These are the files which are used to develop a new application (supporting files)
+
+
+Environmental Variables :: These are the variables which are predefined by operating system, which stores the url of 
+binary files or library files and will notify the operating system about the loction of the binaries and libraries of 
+any installed softwares
+
+there are two basic environmental variables :: they are 
+1) path :: This is a predefined environmental variable which is by default available in computer system and ready for 
+usage. It can store url of binary files
+
+2) classpath :: this is also an environmental variable which is used to store url of library files and notify the location
+of it to OS
+
+Java compiler will accept any java file with file extension as .java 
+Where as java interpreter will accept a .class file name with out .class extension 
