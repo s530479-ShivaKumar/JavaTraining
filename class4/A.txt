@@ -1,0 +1,35 @@
+package com;
+
+public class A {
+
+	// These are non-static class scope variables (or) fields
+		public int x;
+		public int y;
+		
+		//user defined no-arg constructor
+		A(){
+			
+		}
+		
+		//user defined two - parameterised A class constructor
+		A(int x,int y){
+			this.x = x;
+			this.y = y;
+		}
+		
+		//If we are calling a constructor of a class inside another constructor of same class then constructor calling
+		//statement should be the first statement as per java standard
+		//One - argument constructor
+		A(int x){
+			this(x,77,66);//Here three argument constructor is called inside one-arg constructor of same class
+			System.out.println("This is user defined constructor with one - argument");
+		}
+		
+		//Three argument constructor
+		A(int x,int y,int z){
+			this(x,y);
+		}
+		
+}
+
+

@@ -1,0 +1,78 @@
+package com;
+
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Program Begin");
+		//Object creation statement for A class non-static members
+		A oa1 = new A();
+		B ob1 = new B();
+		
+		System.out.println("A class object address on oa1 = "+oa1);
+		System.out.println("B class object address on ob1 = "+ob1);
+		
+		/*oa1.display(); //x = 0 and y = 0
+		oa1.set(88, 99);
+		oa1.display(); // x = 88 and y = 99
+		oa1.set(111);
+		oa1.display();// x = 111 and y = 99 
+		 */
+		
+		ob1.set(55, 66,oa1);
+		ob1.show(oa1);
+		
+	}
+}
+
+class A {
+
+		
+	// These are non-static class scope variables (or) fields
+	public int x;
+	public int y;
+	
+	
+	// below are non-static methods of the class 
+	// Here two set methods are exhibiting rule of polymorphism 
+	public void set(int a,int b) {
+		x = a;
+		y = b;
+	}
+	
+	public void set(int x) {
+		this.x = x;
+	}
+	
+	public void display() {
+		System.out.println("Value of A class x = "+x);
+		System.out.println("Value of A class y = "+y);
+	}
+}
+
+
+
+class B {
+
+	private int x = 11;
+	private int z = 33;
+	
+	
+	public void set(int x,int z,A manas) {
+		this.x = x;
+		this.z = z;
+		manas.x = x;
+		manas.y = 55;
+	}
+	
+	public void show(A obj) {
+		obj.display();
+		this.display();
+	}
+	
+	public void display() {
+		System.out.println("B class x = "+this.x);
+		System.out.println("B class z = "+this.z);
+	}
+}

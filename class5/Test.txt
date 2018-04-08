@@ -1,0 +1,61 @@
+package com;
+
+public class Test {
+	
+	int a = 100; // Non-static field/class scope variable of Test class
+	static int b = 900; // static field of Test class
+	
+	public static void main(String[] args) {
+		
+		System.out.println("A class static y = "+A.y);
+		
+		A oa1 = new A();
+		System.out.println("A class non - static x = "+oa1.x);
+		
+		A.y++;A.y++;A.y++;A.y++;
+		oa1.x++;oa1.x++;oa1.x++;
+		System.out.println("A class static y = "+oa1.y);
+		//In the above statement we are calling static variable of A class using
+		//an object reference of same class by named oa1. static members can be called 
+		//using object reference of same class but with initialization of a value to
+		// the reference
+		System.out.println("A class non - static x = "+oa1.x);
+		
+		A oa2 = new A(); //created second object for A class
+		System.out.println("After creating second object values for x and y of A class");
+		System.out.println("A class static y = "+oa2.y); // y = 4
+		System.out.println("A class non - static x = "+oa2.x); // x = 0
+		
+		Test test1 = null;
+		show();
+		Test test = new Test();
+		System.out.println("Test class non-static a = "+test.a);
+		System.out.println("Test class static member b = "+Test.b);//called using class name
+		System.out.println("Test class static member b = "+test.b);//called using object name
+		System.out.println("Test class static member b = "+test1.b);
+		//System.out.println("Test class non-static a = "+this.a);
+		//Dont use "this" keyword inside a static method for refering same class 
+		//non-static members
+		//"this" keyword is used to call non-static members of a class within
+		//other methods of the same class.
+		test.display();
+	}
+	
+	static void show() {
+		System.out.println("Test class static b = "+b);
+		Test test = new Test();
+		System.out.println("Test class non-static a = "+test.a);
+		//System.out.println("Test class non-static a = "+a);
+	}
+	
+	public void display() {
+		System.out.println("Test class static b = "+b);
+		System.out.println("Test class non-static a = "+a);
+	}
+	
+}
+/*
+
+
+
+*/

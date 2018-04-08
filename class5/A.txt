@@ -1,0 +1,23 @@
+
+public class A {
+
+	public int x;
+	static public int y;
+	
+}
+
+/*
+
+Student Marks list
+------------------
+
+design a class Student(Class Name)
+stdId , stdName , marks(3 subjects[maths,science,social]) , totMarks, avg 
+create 6 objects for Student class
+
+1) calculate totMarks and avg of marks of eachstudent
+2) calculate tot of totMarks of all students
+3) calculate and display number(count) of students 
+
+
+*/
